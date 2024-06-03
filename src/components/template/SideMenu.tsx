@@ -1,10 +1,14 @@
 'use client'
 
+import { useAuth } from "@/data/hook/useAuth";
+import { useRouter } from "next/navigation";
 import { Adjustments, Bell, Home, Logout } from "../icons";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 
 export default function SideMenu() {
+  const router = useRouter()
+  const { logout } = useAuth()
 
   return (
     <aside className={`
@@ -24,7 +28,7 @@ export default function SideMenu() {
       <ul>
         <MenuItem 
           text="Sair" icon={Logout} 
-          onClick={()=> console.log('logout')}
+          onClick={logout}
           className={`
           text-red-600
             hover:bg-red-400 hover:text-white

@@ -10,9 +10,9 @@ export default function ToggleThemeButton({ theme, toggleTheme } : ToggleThemeBu
   return (
     theme === 'dark' ? (
       <button 
-        onClick={toggleTheme} 
+        onClick={()=> toggleTheme()} 
         className={`
-          hidden sm:flex p-1 rounded-full w-14 lg:w-24
+          hidden sm:flex items-center p-1 rounded-full w-14 lg:w-24
           bg-gradient-to-r from-yellow-300 to-yellow-600
         `}
       >
@@ -27,9 +27,9 @@ export default function ToggleThemeButton({ theme, toggleTheme } : ToggleThemeBu
       </button>
     ) : (
       <button 
-        onClick={toggleTheme} 
+        onClick={()=> toggleTheme()} 
         className={`
-          hidden sm:flex justify-end p-1 rounded-full w-14 lg:w-24
+          hidden sm:flex justify-end items-center p-1 rounded-full w-14 lg:w-24
           bg-gradient-to-r from-gray-900 to-gray-500
         `}
       >
